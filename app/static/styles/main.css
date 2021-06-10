@@ -14,7 +14,7 @@ body {
 .nav-bar {
     width: 100%;
     display: inline-block;
-    background-color: #1C539F;
+    background-color: #000000;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
     padding-top: 10px;
@@ -50,7 +50,7 @@ body {
 }
 
 .profile {
-    background-color: #1d539f !important;
+    background-color: #000000 !important;
     text-align: center;
     height: 320px;
     margin-bottom: 50px;
@@ -80,7 +80,7 @@ body {
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;
-    background-color: #1d539f;
+    background-color: #000000;
 }
 
 .banner .logo {
