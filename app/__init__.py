@@ -2,11 +2,11 @@ import os
 from flask import Flask, render_template, send_from_directory
 from flask_bootstrap import Bootstrap
 from dotenv import load_dotenv
+from flask import request
 
 load_dotenv()
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-
 
 @app.route('/')
 def index():
@@ -22,4 +22,17 @@ def blog():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html', title="Projects", url=os.getenv("URL"))
+	# Hardcoded projects
+	robotics_projects = ['Sumo Robot', 'Line Following Robot', 'Soccer Robot', 'Fire Extinguishing Robot']
+	electronics_projects = ['Cell Phone Detector', 'Mobile Jammer Circuit']
+	ai_projects = ['Font Classifier Perceptron']
+	misc_projects = ['Snake Video Game']
+	proje = [robotics_projects, electronics_projects, ai_projects, misc_projects]
+	
+	page = request.args.get('page')
+	if page and page.isdigit():
+		page = int(page)
+	else:
+		page = 1
+	
+	return render_template('projects.html', title="Projects", url=os.getenv("URL"), projects=proje, pag = page)
