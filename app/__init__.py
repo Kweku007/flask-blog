@@ -22,4 +22,4 @@ def blog():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html', title="Kweku Aboagye", url=os.getenv("URL"))
+    return render_template('projects.html', title="Projects", url=os.getenv("URL"))
